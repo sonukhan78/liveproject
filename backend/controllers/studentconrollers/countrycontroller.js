@@ -8,13 +8,17 @@ const countryget = async (req, res) => {
 };
 
 const countrypost = async (req, res) => {
-  const {countrycode,countryname,countryschool} =
+  const {countrycode,countryname,schoolname,subject,email,cours,gender} =
     req.body;
  
   let data = await country.create({
     countrycode,
     countryname,
-    countryschool
+    schoolname,
+    subject,
+    email,
+    cours,
+    gender
   });
 
   res.status(201).json({
@@ -24,27 +28,32 @@ const countrypost = async (req, res) => {
 };
 
 const schoolpost = async (req, res) => {
-    const {countrycode,countryname,countryschool} =
+    const {countrycode,countryname,schoolname,subject,email,cours,gender} =
       req.body;
    
     let data = await country.find()
-    if(data){
-        res.status(201).json({massage:"please data response"})
-    }
-    if(!countrycode ||  !countryname || !countryschool){
-        res.status(201).json({ 
-             countryschool:data.countryschool})
-       
-    }
-    
+    JSON.stringify(data)
+    console.log(country.countrycode,countryname,schoolname,subject);
+ 
+    if (country.countrycode == country && country.countryname == country && subject.subname == subject ) {
+      const data = await student.create({
+        countrycode,
+        countryname,
+        schoolname,
+        number,
+        cours,
+        gender,
+        email,
+        subject,
+      })
   
-    res.status(201).json({
-     countrycode: data.countrycode,
-     countryname: data.countrycode,
-     countrycode: data.countrycode,
-    });
-   
-  };
+      // res.send(data) 
+    } else {
+      res.send("not found")
+  
+    }
+  
+     };
 
 module.exports = {
   countryget,

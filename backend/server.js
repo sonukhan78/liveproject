@@ -13,6 +13,7 @@ app.use(errorHandler);
 app.use("/api/tudo", require("./router/Todorouter"));
 app.use("/api/studentsubject",require("././router/studentrouters/studentrouter"))
 app.use("/api/countrycode",require("././router/studentrouters/countryrouter"))
+app.use("/api/studentcourse",require("././router/studentrouters/courserouter"))
 app.use("/api/userAuth", require("./router/userAuthrouter2"));
 app.use("/api/product", require("./router/productrouter"));
 app.use("/api/userAuth", require("./router/userAuthrouter"));

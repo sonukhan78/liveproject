@@ -2,15 +2,28 @@ const mongoose = require("mongoose");
 const country = new mongoose.Schema(
   {
     countrycode: {
-      type: String,
+      type: Object,
     },
     countryname: {
-      type: String,
+      type: Object,
     },
-    countryschool: {
-      type: String,
+    schoolname: {
+      type: Object,
+    },
+    subject: {
+      type: Object,
     },
 
+    email: {
+      type: String,
+    },
+    cours: {
+      type: Object,
+    },
+
+    gender: {
+      type: String,
+    },
   },
   { timestamps: true }
 );
