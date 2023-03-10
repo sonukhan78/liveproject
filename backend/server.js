@@ -34,7 +34,7 @@ app.use("/api/product", require("./router/productrouter"));
 app.use("/api/userAuth", require("./router/userAuthrouter"));
 app.use("/api/Twelvedata", require("././router/imagerouter/Twelvedatarouter"));
 app.use("/api/deshbord", require("./router/Deshbordrouter"));
-app.use("/api/addtocard", require("./router/Addtocardrouter"));
+app.use("/api/addcard", require("./router/Addtocardrouter"));
 app.use("/api/wishing", require("./router/Wishingrouter"));
 app.use("/api/newdata", require("./router/Userrouter3"));
 // const mobileprodect = require("./model/mobileModel");

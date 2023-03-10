@@ -1,30 +1,32 @@
-const mongoose = require("mongoose")
-const addtocard = new mongoose.Schema({
-    title:{
-        type:String,
-        required:[true,"please add the title"]
+const mongoose = require("mongoose");
+const Addtocard = new mongoose.Schema(
+  {
+    title: {
+      type: String,
+      required: [true, "please add the title"],
     },
-    dis:{
-        type:String,
-        required:[true,"please add the dis"]
+    price: {
+      type: String,
+      required: [true, "please add the price"],
+    },
+    dis: {
+      type: String,
+      required: [true, "please add the dis"],
+    },
+    quelity: {
+      type: String,
+      required: [true, "please add the quelity"],
+    },
+    size: {
+      type: String,
+      required: [true, "please add the size"],
+    },
+    image: {
+      type: String,
+      required: [true, "please add the image"],
+    },
+  },
+  { timestamps: true }
+);
 
-    },
-    image:{
-        type:String,
-        required:[true,"please add the image"]
-    },
-    price:{
-        type:String,
-        required:[true,"please add the price"]
-    },
-    rating:{
-        type:String,
-        required:[true,"please add the rating"]
-    },
-    quantity:{
-        type:String,
-        required:[true,"please add quantity"]
-    },
-});
-
-module.exports = mongoose.model("Addcart",addtocard)
+module.exports = mongoose.model("addcard", Addtocard);
