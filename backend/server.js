@@ -8,15 +8,35 @@ const dotenv = require("dotenv").config();
 const port = process.env.PORT || 5000;
 app.use(express.urlencoded({ extended: false }));
 app.use("/upload", express.static("backend/image"));
-const { errorHandler } = require("./middleware/errormiddleware");``
+const { errorHandler } = require("./middleware/errormiddleware");
+``;
 app.use(errorHandler);
 app.use("/api/tudo", require("./router/Todorouter"));
-app.use("/api/studentsubject",require("././router/studentrouters/studentrouter"))
-app.use("/api/countrycode",require("././router/studentrouters/countryrouter"))
-app.use("/api/studentcourse",require("././router/studentrouters/courserouter"))
+app.use(
+  "/api/studentsubject",
+  require("././router/studentrouters/studentrouter")
+);
+app.use("/api/countrycode", require("././router/studentrouters/countryrouter"));
+app.use(
+  "/api/studentcourse",
+  require("././router/studentrouters/courserouter")
+);
+app.use("/api/employ", require("././router/studentrouters/courserouter"));
+app.use("/api/signup", require("././router/studentrouters/signuprouter"));
+app.use("/api/prodect", require("././router/studentrouters/prodectrouter"));
+app.use("/api/profile", require("././router/studentrouters/profilerouter"));
+app.use("/api/Products", require("././router/studentrouters/Productsrouter"));
+app.use("/api/Eighdata", require("./router/imagerouter/Eightdatarouter"));
+app.use("/api/sixdata", require("././router/imagerouter/Sixdatarouter"));
+app.use("/api/sliderdata", require("././router/imagerouter/sliderdatarouter"));
 app.use("/api/userAuth", require("./router/userAuthrouter2"));
 app.use("/api/product", require("./router/productrouter"));
 app.use("/api/userAuth", require("./router/userAuthrouter"));
+app.use("/api/Twelvedata", require("././router/imagerouter/Twelvedatarouter"));
+app.use("/api/deshbord", require("./router/Deshbordrouter"));
+app.use("/api/addtocard", require("./router/Addtocardrouter"));
+app.use("/api/wishing", require("./router/Wishingrouter"));
+app.use("/api/newdata", require("./router/Userrouter3"));
 // const mobileprodect = require("./model/mobileModel");
 app.use("/upload", express.static("image"));
 const Connectdb = require("./config/db");
